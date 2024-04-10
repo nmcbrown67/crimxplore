@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './App.css'; // Ensure you have this CSS file for styles
+import './App.css'; 
 
 function App() {
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
@@ -8,8 +8,7 @@ function App() {
   const handleScroll = () => {
     const scrollPosition = window.pageYOffset;
     const windowHeight = window.innerHeight;
-    // Simple logic to switch videos based on scroll position
-    // Adjust this logic based on your actual layout and how you want the transitions to happen
+    // Switch videos based on scroll position
     const newActiveIndex = Math.min(Math.floor(scrollPosition / windowHeight), videos.length - 1);
     setActiveVideoIndex(newActiveIndex);
   };
@@ -17,11 +16,11 @@ function App() {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup the event listener on component unmount
+    // Cleans up the event listener on component unmount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Define your videos here
+  // Videos defined here
   const videos = [
     "https://int.nyt.com/data/videotape/finished/2023/12/1702143468/stabilized_mountain-timelapse_colored_1-1254w.mp4",
     "https://int.nyt.com/data/videotape/finished/2023/12/1702143786/grave-topper_colored-1254w.mp4", // Add the second video URL here
