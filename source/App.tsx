@@ -31,21 +31,31 @@ function App() {
     // Add more video URLs as needed
   ];
 
+  const text = [
+    "Fifty years ago, eight Americans set off for South America to climb Aconcagua, one of the world’s mightiest mountains.",
+    "Things quickly went wrong. Two climbers died. Their bodies were left behind.",
+    "Now, a camera belonging to one of the deceased climbers has emerged from a receding glacier near the summit …",
+    "… and one of mountaineering’s most enduring mysteries has been given air and light.",
+  ]
+
   return (
     <div className="App">
-      {videos.map((src, index) => (
-        <div key={index} className={`video-background ${activeVideoIndex === index ? 'active' : ''}`}>
-          <video autoPlay muted loop style={{ position: 'fixed', right: 0, bottom: 0, minWidth: '95%', minHeight: '100%', objectFit: 'cover', zIndex: -1 }}>
-            <source src={src} type="video/mp4" />
-            Your browser does not support HTML5 video.
-          </video>
+    {videos.map((src, index) => (
+      <div key={index} className={`video-background ${activeVideoIndex === index ? 'active' : ''}`}>
+        <video autoPlay muted loop style={{ position: 'fixed', right: 0, bottom: 0, minWidth: '95%', minHeight: '100%', objectFit: 'cover', zIndex: -1 }}>
+          <source src={src} type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+        <div className="video-text">
+          {text[index]}
         </div>
-      ))}
+      </div>
+    ))}
       {/* Content causing the page to scroll, thus enabling video transitions */}
       <div style={{ height: `${videos.length * 100}vh` }}>
         <div className="content">
           <h1>Welcome to Nana's Graphic Test</h1>
-          {<p></p>}
+          {<p>test</p>}
         </div>
       </div>
     </div>
