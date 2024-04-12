@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './App.css'; 
+import './App.css'; // Ensure you have this CSS file for styles
 
 function App() {
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
@@ -8,7 +8,8 @@ function App() {
   const handleScroll = () => {
     const scrollPosition = window.pageYOffset;
     const windowHeight = window.innerHeight;
-    // Switch videos based on scroll position
+    // Simple logic to switch videos based on scroll position
+    // Adjust this logic based on your actual layout and how you want the transitions to happen
     const newActiveIndex = Math.min(Math.floor(scrollPosition / windowHeight), videos.length - 1);
     setActiveVideoIndex(newActiveIndex);
   };
@@ -16,14 +17,17 @@ function App() {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
-    // Cleans up the event listener on component unmount
+    // Cleanup the event listener on component unmount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Videos defined here
+  // Define your videos here
   const videos = [
     "https://int.nyt.com/data/videotape/finished/2023/12/1702143468/stabilized_mountain-timelapse_colored_1-1254w.mp4",
-    "https://int.nyt.com/data/videotape/finished/2023/12/1702143786/grave-topper_colored-1254w.mp4", // Add the second video URL here
+    "https://int.nyt.com/data/videotape/finished/2023/12/1702143786/grave-topper_colored-1254w.mp4",
+    "videos/frstfilm.mp4",
+    "videos/mnkms.mp4",
+    // Add the second video URL here
     // Add more video URLs as needed
   ];
 
@@ -31,7 +35,7 @@ function App() {
     <div className="App">
       {videos.map((src, index) => (
         <div key={index} className={`video-background ${activeVideoIndex === index ? 'active' : ''}`}>
-          <video autoPlay muted loop style={{ position: 'fixed', right: 0, bottom: 0, minWidth: '100%', minHeight: '100%', objectFit: 'cover', zIndex: -1 }}>
+          <video autoPlay muted loop style={{ position: 'fixed', right: 0, bottom: 0, minWidth: '95%', minHeight: '100%', objectFit: 'cover', zIndex: -1 }}>
             <source src={src} type="video/mp4" />
             Your browser does not support HTML5 video.
           </video>
