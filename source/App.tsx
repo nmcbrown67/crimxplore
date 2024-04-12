@@ -24,7 +24,7 @@ function App() {
   const videos = [
     "https://int.nyt.com/data/videotape/finished/2023/12/1702143468/stabilized_mountain-timelapse_colored_1-1254w.mp4",
     "https://int.nyt.com/data/videotape/finished/2023/12/1702143786/grave-topper_colored-1254w.mp4",
-    "videos/frstfilm.mp4", // slow both videos down in imovie
+    "videos/frstfilmf.mp4", // slow both videos down in imovie
     "videos/mnkms.mp4",
   ];
 
@@ -42,16 +42,17 @@ function App() {
         <video autoPlay muted loop style={{ position: 'fixed', right: 0, bottom: 0, minWidth: '95%', minHeight: '100%', objectFit: 'cover', zIndex: -1 }}>
           <source src={src} type="video/mp4" />
         </video>
-        <div className="video-text">
-          {text[index]}
-        </div>
       </div>
     ))}
       {/* Content causing the page to scroll, thus enabling video transitions */}
-      <div style={{ height: `${videos.length * 100}vh` }}>
+      <div>
         <div className="content">
           <h1>Welcome to Nana's Graphic Xplore</h1>
-          {<p></p>}
+          {text.map ((src, index) => (
+            <div key = {index} className="video-text">
+            {text[index]}
+          </div>
+          ))}
         </div>
       </div>
     </div>

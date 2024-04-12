@@ -23,11 +23,11 @@
   /* Additional styling for your content */
 }
 .video-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  height: 150vh;
   color: white;
   font-size: 2em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+/* center text/go over styling */
