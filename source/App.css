@@ -20,6 +20,8 @@
   position: relative;
   z-index: 10; /* Make sure content is on top of videos */
   color: white; /* Choose a color that stands out against your videos */
+  text-align: center;
+  padding-top: 10px;
   /* Additional styling for your content */
 }
 .video-text {
@@ -28,6 +30,8 @@
   color: white;
   font-size: 2em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  
 }
 
 /* center text/go over styling */
