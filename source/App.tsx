@@ -24,8 +24,8 @@ function App() {
   const videos = [
     "https://int.nyt.com/data/videotape/finished/2023/12/1702143468/stabilized_mountain-timelapse_colored_1-1254w.mp4",
     "https://int.nyt.com/data/videotape/finished/2023/12/1702143786/grave-topper_colored-1254w.mp4",
-    "videos/frstfilmf.mp4", // slow both videos down in imovie
-    "videos/mnkms.mp4",
+    "/videos/frstfilmf.mp4", // slow both videos down in imovie
+    "/videos/mnkms.mp4",
   ];
 
   const text = [
