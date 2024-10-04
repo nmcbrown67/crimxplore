@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'; 
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-    {videos.map((src, index) => (
+    {videos.map((src: string, index: number) => (
       <div key={index} className={`video-background ${activeVideoIndex === index ? 'active' : ''}`}>
         <video autoPlay muted loop style={{ position: 'fixed', right: 0, bottom: 0, minWidth: '95%', minHeight: '100%', objectFit: 'cover', zIndex: -1 }}>
           <source src={src} type="video/mp4" />
@@ -48,9 +48,9 @@ function App() {
       <div>
         <div className="content">
           <h1>Welcome to Nana's Graphic Xplore</h1>
-          {text.map ((src, index) => (
+          {text.map ((item, index) => (
             <div key = {index} className="video-text">
-            {text[index]}
+            {item}
           </div>
           ))}
         </div>
